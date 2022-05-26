@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="BakeBook.BakeBookController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="Steps" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BakeBook.BakeBookController">
+    <children>
+        <Label layoutX="404.0" layoutY="32.0" text="Red Velvet Cupcakes" />
+        <Label layoutX="65.0" layoutY="40.0" text="Ingredients:" />
+        <GridPane layoutX="31.0" layoutY="67.0" prefHeight="324.0" prefWidth="289.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="285.0" text="2 large eggs, room temperature and separated" />
+                <CheckBox mnemonicParsing="false" text="1 and 1/3 cups all-purpose flour" GridPane.rowIndex="1" />
+                <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="341.0" text="4 teaspoons natural unsweetened cocoa powder" GridPane.rowIndex="2" />
+                <CheckBox mnemonicParsing="false" text="1/4 teaspoon salt" GridPane.rowIndex="3" />
+                <CheckBox mnemonicParsing="false" text="1/4 cup unsalted butter," GridPane.rowIndex="4" />
+                <CheckBox mnemonicParsing="false" text="2 teaspoons pure vanilla extract" GridPane.rowIndex="5" />
+                <CheckBox mnemonicParsing="false" text="1/2 teaspoon distilled white vinegar" GridPane.rowIndex="6" />
+                <CheckBox mnemonicParsing="false" text="liquid or gel red food coloring*" GridPane.rowIndex="7" />
+                <CheckBox mnemonicParsing="false" prefHeight="58.0" prefWidth="290.0" text="1/2 cup buttermilk, room temperature*" GridPane.rowIndex="8" />
+                <CheckBox mnemonicParsing="false" text="cream cheese frosting for topping" GridPane.rowIndex="9" />
+            </children>
+        </GridPane>
+        <Separator layoutX="577.0" layoutY="6.0" orientation="VERTICAL" prefHeight="424.0" prefWidth="6.0" />
+        <Separator layoutX="324.0" layoutY="10.0" orientation="VERTICAL" prefHeight="406.0" prefWidth="0.0" />
+        <GridPane layoutX="611.0" layoutY="49.0" prefHeight="337.0" prefWidth="485.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="61.0" minHeight="4.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="8.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Text fx:id="step2" strokeType="OUTSIDE" strokeWidth="0.0" text="2. beat 2 egg whites on high speed in a medium bowl until soft peaks form, about 2-3 minutes. " wrappingWidth="456.58453369140625" GridPane.rowIndex="1" />
+                <Text fx:id="step1" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Preheat oven to 350°F (177°C). Line a 12-count muffin pan with cupcake liners." wrappingWidth="487.33984375" />
+                <Text fx:id="step3" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Sift the flour and cornstarch together to make sure it is evenly combined. Whisk this, along with baking soda, cocoa powder, and salt together in a medium bowl. Set aside." wrappingWidth="529.5845336914062" GridPane.rowIndex="2" />
+                <Text fx:id="step4" strokeType="OUTSIDE" strokeWidth="0.0" text="4. With the mixer on low speed, add the dry ingredients in three additions alternating with the buttermilk, beginning and ending with the dry ingredients, and mixing each addition just until incorporated." wrappingWidth="461.58453369140625" GridPane.rowIndex="3" />
+                <Text fx:id="step5" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Spoon batter into cupcake liners filling 1/2 – 2/3 of the way full. Bake for 20-21 minutes or until the tops of the cupcakes spring back when gently touched and a toothpick inserted in the center comes out clean. Don’t overbake; your cupcakes will dry out. Allow to cool in the pan for 5 minutes, then transfer to a rack to cool completely." wrappingWidth="476.58453369140625" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+        <Button fx:id="home" layoutX="1112.0" layoutY="336.0" mnemonicParsing="false" onAction="#homeButtonClick" text="Home" />
+        <Button fx:id="conversion" layoutX="1070.0" layoutY="385.0" mnemonicParsing="false" onAction="#conversionRVC" text="Convert Here!" />
+      <ImageView fitHeight="240.0" fitWidth="169.0" layoutX="378.0" layoutY="93.0">
+         <image>
+            <Image url="@Red-Velvet-Cupcakes-5-600x900.png" />
+         </image>
+      </ImageView>
+    </children>
 </AnchorPane>

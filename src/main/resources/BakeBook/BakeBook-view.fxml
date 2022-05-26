@@ -9,9 +9,13 @@
    <children>
       <Label layoutX="254.0" layoutY="37.0" text="Choose a recipe!" />
       <Button layoutX="320.0" layoutY="79.0" mnemonicParsing="false" onAction="#CccButtonClick" text="Chocolate  Chip Cookies" />
-      <Button layoutX="362.0" layoutY="140.0" mnemonicParsing="false" onAction="#browniesbuttonclick" text="Brownies" />
+      <Button layoutX="362.0" layoutY="140.0" mnemonicParsing="false" onAction="#Browniesbuttonclick" text="Brownies" />
       <Button layoutX="325.0" layoutY="200.0" mnemonicParsing="false" onAction="#AcmButtonClick" text="Apple Crumble Muffins" />
       <Button layoutX="329.0" layoutY="269.0" mnemonicParsing="false" onAction="#RvcButtonClick" text="Red Velvet Cupcakes" />
-      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView" fitHeight="257.0" fitWidth="200.0" layoutX="68.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+         </image></ImageView>
+      <Button fx:id="btnNext" layoutX="254.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnNext" text="&gt;" />
+      <Button fx:id="btnBack" layoutX="29.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnBack" text="&lt;" />
    </children>
 </AnchorPane>

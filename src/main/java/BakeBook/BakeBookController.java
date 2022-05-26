@@ -1,61 +1,145 @@
 package BakeBook;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
-
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 
 public class BakeBookController {
+    public Button homeButtonClick;
+
+    @FXML
+    ImageView imageView = new ImageView();
+
+    @FXML
+    BakeBook photos = new BakeBook();
 
 
-    private File[] files;
-    private Image[] images;
-    int index;
-
-    public Photos(){
-        files = new File[4];
-        images = new Image[4];
-        index=0;
-        setFilesAndImages();
+    public void btnNext() {
+        imageView.setImage(photos.getNextImage());
     }
-    public void setFilesAndImages(){
-        files[0]= new File("src/main/resources/photoalbum/king_of_clubs2.png");
-        files[1]= new File("src/main/resources/photoalbum/king_of_diamonds2.png");
-        files[2]= new File("src/main/resources/photoalbum/king_of_hearts2.png");
-        files[3]= new File("src/main/resources/photoalbum/king_of_spades2.png");
 
-        for (int i = 0; i < images.length; i++) {
-            images[i] = new Image(files[i].toURI().toString());
+    public void btnBack() {
+        imageView.setImage(photos.getPreviousImage());
 
-        }
+
     }
-    //returns an image from array of images at specified index
-    public Image getNextImage(){
-        Image image= images[0];
-        if(index<images.length){
-            image = images[index];
-            index++;
-            if(index>=images.length){
-                index=(images.length-1);
-            }
-        }
-        return image;
+
+    public void CccButtonClick(ActionEvent event) throws IOException {
+        Parent ChocolateChipCookies = FXMLLoader.load(getClass().getResource("ChocolateChipCookies-view.fxml"));
+        Scene scene = new Scene(ChocolateChipCookies);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Chocolate Chip Cookies");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
-    public Image getPreviousImage(){
-        Image image = images[index-1];
-        if(index<= images.length){
-            image= images[index-1];
-            index--;
-            if(index==0){
-                index=1;
-            }
+
+    public void Browniesbuttonclick(ActionEvent event) throws IOException {
+        Parent Brownies = FXMLLoader.load(getClass().getResource("Brownies-view.fxml"));
+        Scene scene = new Scene(Brownies);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Brownies");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    public void AcmButtonClick(ActionEvent event) throws IOException {
+        Parent AppleCrumbleMuffins = FXMLLoader.load(getClass().getResource("AppleCrumbleMuffins-view.fxml"));
+        Scene scene = new Scene(AppleCrumbleMuffins);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Apple Crumble Muffins");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    public void RvcButtonClick(ActionEvent event) throws IOException {
+        Parent RedVelvetCupcakes = FXMLLoader.load(getClass().getResource("RedVelvetCupcakes-view.fxml"));
+        Scene scene = new Scene(RedVelvetCupcakes);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Red Velvet Cupcakes");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+
+    }
+
+    public void conversionBtnClick(ActionEvent event) throws IOException {
+        Parent CCC = FXMLLoader.load(getClass().getResource("Conversion-view.fxml"));
+        Scene scene = new Scene(CCC);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Conversion");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+
+    }
+
+    public void conversionBrownies(ActionEvent event) throws IOException {
+        Parent Brownies = FXMLLoader.load(getClass().getResource("Conversion1.fxml"));
+        Scene scene = new Scene(Brownies);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Conversion");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+
+    }
+
+    public void conversionRVC(ActionEvent event) throws IOException {
+        Parent RVC = FXMLLoader.load(getClass().getResource("Conversion3.fxml"));
+        Scene scene = new Scene(RVC);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Conversion");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+
+    }
+
+    public void conversionACM(ActionEvent event) throws IOException {
+        Parent ACM = FXMLLoader.load(getClass().getResource("Conversion2.fxml"));
+        Scene scene = new Scene(ACM);
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Conversion");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+
+        public void homeButtonClick(ActionEvent event) throws IOException {
+            Parent BakeBook = FXMLLoader.load(getClass().getResource("BakeBook-view.fxml"));
+            Scene scene = new Scene(BakeBook);
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("BakeBook");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
         }
-        return image;
+
+    public void btnRecipeRVC(ActionEvent event) {
     }
 }
 
 
 
-
-
-}
